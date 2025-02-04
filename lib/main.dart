@@ -49,12 +49,11 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
           final evalResult = evaluator.eval(expression, {}); // Evaluate expression
           result = evalResult.toString();
           displayText += '=' + result; // Append result to displayText
-    } catch (e) {
+      } catch (e) {
         result = "Error"; // Handle invalid expressions
-    }
-} else {
-        // if not = or C then it is another button that will be evaluated once one of those buttons are pressed
-        displayText += buttonText; // Append the pressed button's text to the display
+      }
+    } else {
+        displayText += buttonText;
       }
     });
   }
@@ -152,6 +151,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
                 ),
                 Row(
                   children: [
+                    calculatorButton('%'),
                     calculatorButton('='),
                   ],
                 ),
